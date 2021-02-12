@@ -8,18 +8,24 @@ const Login = (props) => {
     const user = useContext(UserContext);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    console.log(user, 'usuarios')
     return(<div>
         <Form setEmail={setEmail} setPassword={setPassword} onClickSubmit={async()=>{
             try{
             const response = await onLogin(email, password)
             if(isEmpty(response) === false){
-            user.setName(response.name)
-            user.setHouse(response.house)
-            user.setStaff(response.staff)
+            const {name, house, staff} = response.data;
+            user.setName(name)
+            user.setHouse(house)
+            user.setStaff(staff)
+            if(staff === true){
+                props.history.push('/staff')
+            } else {
+                props.history.push('/student')
             }
-            alert(response)
+            }
             } catch (err) {
+                // mensaje de erorr en err
+                console.log(err)
                 throw err;
             }
         }} />
