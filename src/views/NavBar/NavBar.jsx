@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuidditch } from "@fortawesome/free-solid-svg-icons";
+import {withRouter} from 'react-router'
 import isEmpty from "lodash/isEmpty";
 
 const NavBar = (props) => {
-  const user = useContext(UserContext);
-  console.log(props, "asasas");
+  const user = useContext(UserContext);;
   const { history } = props;
-  console.log(user, "asdasdasd");
+
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container-fluid">
@@ -33,8 +33,7 @@ const NavBar = (props) => {
                 user.setImg("");
                 user.setStaff(false);
                 user.setHouse("");
-                user.history.push("/");
-                user.setHistory("");
+                history.push("/");
               }}
               id="logout-icon"
               icon={faQuidditch}
@@ -48,4 +47,4 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

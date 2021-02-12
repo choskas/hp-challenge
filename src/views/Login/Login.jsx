@@ -17,7 +17,6 @@ const Login = (props) => {
             user.setName(name)
             user.setHouse(house)
             user.setStaff(staff)
-            user.setHistory(props.history);
             if(staff === true){
                 user.setImg('https://files.mormonsud.org/wp-content/uploads/2019/05/severus-snape.jpg')
             } else {
