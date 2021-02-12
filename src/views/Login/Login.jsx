@@ -17,11 +17,13 @@ const Login = (props) => {
             user.setName(name)
             user.setHouse(house)
             user.setStaff(staff)
+            user.setHistory(props.history);
             if(staff === true){
-                props.history.push('/staff')
+                user.setImg('https://files.mormonsud.org/wp-content/uploads/2019/05/severus-snape.jpg')
             } else {
-                props.history.push('/student')
+                user.setImg('https://tiempodigital.mx/wp-content/uploads/2020/07/harry-potter.jpeg')
             }
+            props.history.push('/data-base')
             }
             } catch (err) {
                 // mensaje de erorr en err

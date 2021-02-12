@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto+Slab:wght@300&display=swap');
 * {
   font-family: 'Lexend Mega', sans-serif;
 }
@@ -37,4 +38,70 @@
 
 .table-item {
   cursor: pointer;
+}
+
+.card-detail-container {
+  margin-top: 100px;
+  height: 60vh;
+}
+
+.detail-image {
+  height: 300px;
+}
+
+#detail-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body h4 {
+  margin-bottom: 50px;
+}
+
+#alive {
+  color: green;
+}
+
+#dead {
+  color: red;
+}
+
+#wand-list {
+  width: 300px;
+}
+
+#searchbar-container {
+  width: 50%;
+  margin-left: 7px;
+}
+
+.search-container {
+  margin-left: 20px;
+}
+
+#go-back-icon {
+  cursor: pointer;
+  color: red;
+  font-size: 40px;
+}
+
+#user-img img {
+  width: 90px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+#user-img {
+  display: flex;
+  justify-content: space-around;
+}
+
+#logout-icon {
+  cursor: pointer;
+}
+
+.user-container-navbar h4 {
+  font-family: 'Cedarville Cursive', cursive;
 }
