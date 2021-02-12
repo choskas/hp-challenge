@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import { isNil } from "lodash";
+import React, { createContext, useEffect, useState } from "react";
 
 export const DetailContext = createContext();
 
@@ -11,6 +12,24 @@ export const DetailProvider = ({ children }) => {
   const [patronus, setPatronus] = useState("");
   const [bloodStatus, setBloodStatus] = useState("");
   const [isAlive, setIsAlive] = useState(true);
+
+  const getInitialData = () => {
+    const getData = JSON.parse(window.sessionStorage.getItem('detail'))
+    if(isNil(getData) === false){
+      setName(getData.name)
+      setImage(getData.image)
+      setHouse(getData.house)
+      setBirth(getData.dateOfBirth)
+      setWand(getData.wand)
+      setPatronus(getData.patronus)
+      setBloodStatus(getData.ancestry)
+      setIsAlive(getData.alive)
+    }
+  }
+  
+  useEffect(() => {
+    getInitialData();
+  },[name])
 
   return (
     <DetailContext.Provider

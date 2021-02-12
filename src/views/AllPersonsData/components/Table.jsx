@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+/* eslint-disable array-callback-return */
+import React, { useContext } from "react";
 import { DetailContext } from "../../../context/DetailContext";
 import { UserContext } from "../../../context/UserContext";
 const Table = (props) => {
@@ -7,7 +8,6 @@ const Table = (props) => {
   const { data, history, searchValue, searchType } = props;
   const mappedData = () => {
     return data.filter((value) => {
-      console.log(value, searchType, 'ashjhdsa')
       if (value.name.toLowerCase().includes(searchValue.toLowerCase()) && searchType === 'Name'){
         return value;
       } else if (value.house.toLowerCase().includes(searchValue.toLowerCase()) && searchType === 'House'){
@@ -17,7 +17,6 @@ const Table = (props) => {
       } else if (searchType === "Search type"){
         return value;
       }
-
     }).map((item, index) => {
       if (user.staff === false) {
         if (item.hogwartsStudent) {
@@ -26,15 +25,17 @@ const Table = (props) => {
               key={index}
               className="table-item"
               onClick={() => {
-                person.setName(item.name);
-                person.setImage(item.image);
-                person.setHouse(item.house);
-                person.setBirth(item.dateOfBirth);
-                person.setWand(item.wand);
-                person.setPatronus(item.patronus);
-                person.setBloodStatus(item.ancestry);
-                person.setIsAlive(item.alive);
-                history.push(`/data-base/${item.name}`);
+                const {name, image, house, dateOfBirth, wand, patronus, ancestry, alive} = item;
+                person.setName(name);
+                person.setImage(image);
+                person.setHouse(house);
+                person.setBirth(dateOfBirth);
+                person.setWand(wand);
+                person.setPatronus(patronus);
+                person.setBloodStatus(ancestry);
+                person.setIsAlive(alive);
+                window.sessionStorage.setItem('detail', JSON.stringify({name, image, house, dateOfBirth, wand, patronus, ancestry, alive}))
+                history.push(`/data-base/${name}`);
               }}
             >
               <th scope="row">
@@ -51,6 +52,7 @@ const Table = (props) => {
             key={index}
             className="table-item"
             onClick={() => {
+              const {name, image, house, dateOfBirth, wand, patronus, ancestry, alive} = item;
               person.setName(item.name);
               person.setImage(item.image);
               person.setHouse(item.house);
@@ -59,6 +61,7 @@ const Table = (props) => {
               person.setPatronus(item.patronus);
               person.setBloodStatus(item.ancestry);
               person.setIsAlive(item.alive);
+              window.sessionStorage.setItem('detail', JSON.stringify({name, image, house, dateOfBirth, wand, patronus, ancestry, alive}))
               history.push(`/data-base/${item.name}`);
             }}
           >
@@ -83,22 +86,6 @@ const Table = (props) => {
       </thead>
       <tbody>
         {mappedData()}
-        {/* <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>Otto</td>
-    </tr> */}
       </tbody>
     </table>
   );
