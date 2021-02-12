@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { DetailContext } from "../../context/DetailContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle, faArrowCircleLeft } from "@fortawesome/free-solid-svg-icons";
 
 const PersonDetail = (props) => {
   const person = useContext(DetailContext);
   return (
     <div className="card-detail-container">
+       <FontAwesomeIcon onClick={()=>{props.history.push('/data-base')}} id="go-back-icon" icon={faArrowCircleLeft} />
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-6" id="detail-image-container">

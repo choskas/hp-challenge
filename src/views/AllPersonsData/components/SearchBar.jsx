@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 const SearchBar = (props) => {
-  const {setSearchValue, searchValue} = props;
-  const [searchType, setSearchType ] = useState("Search type");
+  const {setSearchValue, searchValue, searchType, setSearchType} = props;
   return (
+    <div className="search-container">
+      <h4>Search</h4>
     <div className="input-group mb-3 col-md-6" id="searchbar-container">
       <button
         className="btn btn-outline-secondary dropdown-toggle"
@@ -17,36 +18,34 @@ const SearchBar = (props) => {
         <li
           onClick={() => {
             setSearchType("Name");
-            props.searchType("Name")
           }}
         >
-          <a className="dropdown-item" href="#">
+          <a className="dropdown-item">
             Name
           </a>
         </li>
         <li
           onClick={() => {
             setSearchType("House");
-            props.searchType("House")
           }}
         >
-          <a className="dropdown-item" href="#">
+          <a className="dropdown-item">
             House
           </a>
         </li>
         <li
           onClick={() => {
             setSearchType("Blood type");
-            props.searchType("Blood type")
           }}
         >
-          <a className="dropdown-item" href="#">
+          <a className="dropdown-item">
             Blood type
           </a>
         </li>
       </ul>
       <input
         type="text"
+        disabled={searchType !== 'Search type' ? false : true}
         className="form-control"
         aria-label="Text input with dropdown button"
         value={searchValue}
@@ -55,6 +54,7 @@ const SearchBar = (props) => {
             setSearchValue(value)
         }}
       />
+    </div>
     </div>
   );
 };

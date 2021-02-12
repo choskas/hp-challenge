@@ -4,15 +4,20 @@ import { UserContext } from "../../../context/UserContext";
 const Table = (props) => {
   const person = useContext(DetailContext);
   const user = useContext(UserContext);
-  console.log(user, "<<<<<");
-  const { data, history, searchValue } = props;
+  const { data, history, searchValue, searchType } = props;
   const mappedData = () => {
     return data.filter((value) => {
-      if(value === ""){
+      console.log(value, searchType, 'ashjhdsa')
+      if (value.name.toLowerCase().includes(searchValue.toLowerCase()) && searchType === 'Name'){
         return value;
-      } else if (value.name.toLowerCase().includes(searchValue.toLowerCase())){
+      } else if (value.house.toLowerCase().includes(searchValue.toLowerCase()) && searchType === 'House'){
+        return value;
+      } else if (value.ancestry.toLowerCase().includes(searchValue.toLowerCase()) && searchType === 'Blood type'){
+        return value;
+      } else if (searchType === "Search type"){
         return value;
       }
+
     }).map((item, index) => {
       if (user.staff === false) {
         if (item.hogwartsStudent) {
