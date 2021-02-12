@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../context/UserContext";
+import React, { useEffect, useState } from "react";
 import { onGetAllHogwartsData } from "../../api/apiFunctions";
 import Table from "./components/Table";
 import SearchBar from "./components/SearchBar";
@@ -7,10 +6,7 @@ import SearchBar from "./components/SearchBar";
 const AllPersonsData = (props) => {
   const [searchValue, setSearchValue] = useState("");
   const [searchType, setSearchType] = useState("Search type");
-  const user = useContext(UserContext);
-  const { name, house, staff } = user;
   const [hogwartsData, setHogwartsData] = useState([]);
-  console.log(user, "aser");
   const getHogwartsData = async () => {
     const data = await onGetAllHogwartsData();
     setHogwartsData(data);

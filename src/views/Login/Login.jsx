@@ -19,8 +19,10 @@ const Login = (props) => {
             user.setStaff(staff)
             if(staff === true){
                 user.setImg('https://files.mormonsud.org/wp-content/uploads/2019/05/severus-snape.jpg')
+                window.sessionStorage.setItem('user', JSON.stringify({name, house, staff, img: 'https://files.mormonsud.org/wp-content/uploads/2019/05/severus-snape.jpg'}))
             } else {
                 user.setImg('https://tiempodigital.mx/wp-content/uploads/2020/07/harry-potter.jpeg')
+                window.sessionStorage.setItem('user', JSON.stringify({name, house, staff, img: 'https://tiempodigital.mx/wp-content/uploads/2020/07/harry-potter.jpeg'}))
             }
             props.history.push('/data-base')
             }

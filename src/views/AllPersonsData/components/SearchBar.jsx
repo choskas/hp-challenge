@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const SearchBar = (props) => {
   const {setSearchValue, searchValue, searchType, setSearchType} = props;
@@ -20,27 +20,27 @@ const SearchBar = (props) => {
             setSearchType("Name");
           }}
         >
-          <a className="dropdown-item">
+          <div className="dropdown-item">
             Name
-          </a>
+          </div>
         </li>
         <li
           onClick={() => {
             setSearchType("House");
           }}
         >
-          <a className="dropdown-item">
+          <div className="dropdown-item">
             House
-          </a>
+          </div>
         </li>
         <li
           onClick={() => {
             setSearchType("Blood type");
           }}
         >
-          <a className="dropdown-item">
+          <div className="dropdown-item">
             Blood type
-          </a>
+          </div>
         </li>
       </ul>
       <input

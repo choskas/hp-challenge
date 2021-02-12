@@ -34,6 +34,7 @@ const NavBar = (props) => {
                 user.setStaff(false);
                 user.setHouse("");
                 history.push("/");
+                window.sessionStorage.clear()
               }}
               id="logout-icon"
               icon={faQuidditch}

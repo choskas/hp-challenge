@@ -3,6 +3,10 @@
   font-family: 'Lexend Mega', sans-serif;
 }
 
+body {
+  background-color: #D3D3D3;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -82,12 +86,12 @@
 
 #go-back-icon {
   cursor: pointer;
-  color: red;
+  color: white;
   font-size: 40px;
 }
 
 #user-img img {
-  width: 90px;
+  width: 85px;
   height: 80px;
   border-radius: 50%;
   margin-bottom: 5px;
@@ -104,4 +108,35 @@
 
 .user-container-navbar h4 {
   font-family: 'Cedarville Cursive', cursive;
+}
+
+#house-img {
+  width: 30px;
+}
+
+#card-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 700;
+  color: white;
+}
+
+.list-group-item {
+  background-color: black;
+}
+
+.Gryffindor-back {
+  background-image: url(https://images.alphacoders.com/556/556471.jpg);
+}
+
+.Slytherin-back {
+  background-image: url(https://cdn.wallpapersafari.com/4/63/D4Zlq9.png);
+}
+
+.Ravenclaw-back {
+  background-image: url(https://www.wallpapertip.com/wmimgs/7-74527_harry-potter-ipod-touch-6-case.jpg);
+}
+
+.Hufflepuff-back {
+  background-image: url(https://wallpapercave.com/wp/wp1958743.png);
 }
