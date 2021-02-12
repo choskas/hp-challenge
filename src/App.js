@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import Login from "./views/Login/Login";
 import NavBar from "./views/NavBar/NavBar";
-import StaffView from './views/StaffView';
+import AllPersonsData from './views/AllPersonsData';
 import { UserProvider } from "./context/UserContext";
 import {DetailProvider} from './context/DetailContext';
 import "./App.css";
-import StudentView from "./views/StudentView";
-import PersonDetail from "./views/StudentDetail";
+import PersonDetail from "./views/PersonDetail";
 
 function App() {
   return (
@@ -15,10 +14,9 @@ function App() {
         <NavBar />
         <Switch>
         <Route exact path="/" component={Login} />
-        <Route exact path="/student" component={StudentView} />
         <DetailProvider>
-        <Route exact path="/staff" component={StaffView} />
-        <Route exact path='/staff/:name' component={PersonDetail} />
+        <Route exact path="/data-base" component={AllPersonsData} />
+        <Route exact path='/data-base/:name' component={PersonDetail} />
         </DetailProvider>
         </Switch>
       </UserProvider>

@@ -17,11 +17,7 @@ const Login = (props) => {
             user.setName(name)
             user.setHouse(house)
             user.setStaff(staff)
-            if(staff === true){
-                props.history.push('/staff')
-            } else {
-                props.history.push('/student')
-            }
+            props.history.push('/data-base')
             }
             } catch (err) {
                 // mensaje de erorr en err

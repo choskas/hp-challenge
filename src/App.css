@@ -38,3 +38,39 @@
 .table-item {
   cursor: pointer;
 }
+
+.card-detail-container {
+  margin-top: 100px;
+  height: 60vh;
+}
+
+.detail-image {
+  height: 300px;
+}
+
+#detail-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body h4 {
+  margin-bottom: 50px;
+}
+
+#alive {
+  color: green;
+}
+
+#dead {
+  color: red;
+}
+
+#wand-list {
+  width: 300px;
+}
+
+#searchbar-container {
+  width: 50%;
+  margin-left: 7px;
+}
