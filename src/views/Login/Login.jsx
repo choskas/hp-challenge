@@ -5,7 +5,6 @@ import { UserContext } from "../../context/UserContext";
 import isEmpty from "lodash/isEmpty";
 
 const Login = (props) => {
-  let container;
   const user = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,12 +18,6 @@ const Login = (props) => {
           role="alert"
         >
           <strong>Caput draconis! is not the password anymore</strong> {errorMessage}
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          ></button>
         </div>
       )}
       <Form
