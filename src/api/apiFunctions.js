@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const loginURL = window.location.host.indexOf('localhost') > -1 ? 'http://localhost:3001/login' : 'http://ec2-52-37-61-68.us-west-2.compute.amazonaws.com:1234/api/v1/challenge/login'
+const loginURL = window.location.host.indexOf('localhost') > -1 ? 'http://localhost:3001/login' : 'https://hp-challenge-back.herokuapp.com/login'
 export const onLogin = async (email, password) => {
     try{
     const response = await axios.post(loginURL,{
