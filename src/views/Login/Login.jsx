@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import Form from "./components/Form";
 import { onLogin } from "../../api/apiFunctions";
 import { UserContext } from "../../context/UserContext";
-import { ToastContainer } from "react-toastr";
 import isEmpty from "lodash/isEmpty";
 
 const Login = (props) => {
